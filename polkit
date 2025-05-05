@@ -3,6 +3,7 @@
 packages=(
   passwd
   adduser
+  policykit-1
   policykit-1-gnome
   pkexec 
   polkitd
