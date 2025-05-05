@@ -1,0 +1,25 @@
+#!/bin/bash
+
+packages=(
+  passwd
+  adduser
+  policykit-1-gnome
+  pkexec 
+  polkitd
+  polkitd-pkla
+  liblocale-gettext-perl
+  quota
+  exim4-daemon-light
+)
+
+echo "Updating package list..."
+apt-get update
+
+echo "Installing required packages..."
+apt-get install --yes "${packages[@]}"
+
+if [ $? -eq 0 ]; then
+  echo "Successfully installed or updated all required packages."
+else
+  echo "Warning: Package installation encountered errors."
+fi
